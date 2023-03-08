@@ -11,7 +11,7 @@ export class HomeComponent {
     {
       title: 'Products',
       icon: 'assets/images/box.svg',
-      path: 'products'
+      path: '/products'
     }
   ];
 

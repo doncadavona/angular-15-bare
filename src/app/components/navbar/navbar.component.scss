@@ -1,0 +1,25 @@
+@import '../../../assets/themes/colors';
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 33px;
+  background-color: $dark;
+  color: $light;
+
+  display: flex;
+
+  .main {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+}

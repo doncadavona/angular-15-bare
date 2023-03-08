@@ -1,0 +1,17 @@
+@import '../assets/themes/colors';
+
+.app {
+  font-family: 'Open Sans', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .router-container {
+    margin-top: 40px;
+  }
+}
+
+body {
+  margin: 0 !important;
+}

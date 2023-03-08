@@ -1,1 +1,30 @@
-<p>products-list works!</p>
+<div class="products-list-container">
+  <div class="products-list">
+    <section class="header">
+      <h1>Products</h1>
+    </section>
+    <section class="content">
+      <!-- Table Headers -->
+      <div class="product product__header">
+        <ng-container *ngFor="let column of columns">
+          <div [ngClass]="'product__' + column">
+            {{ column | titlecase }}
+          </div>
+        </ng-container>
+      </div>
+      <!-- Product list -->
+      <div *ngFor="let product of (products$ | async); let index = index">
+        <div class="product product__item" [ngClass]="{ 'even-row': 0 === index % 2}">
+          <!-- <p>
+              <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+            </p> -->
+          <ng-container *ngFor="let column of columns">
+            <div [ngClass]="'product__' + column">
+              {{ product[column] }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

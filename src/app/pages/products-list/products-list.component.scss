@@ -1,0 +1,39 @@
+@import '../../../assets/themes/colors';
+
+.products-list {
+  width: 80%;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product {
+    display: flex;
+    padding: 5px 10px;
+
+    &.even-row {
+      background-color: $accent;
+    }
+
+    &__header {
+      font-weight: bold;
+    }
+
+    &__item {
+      font-weight: bold;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__title {
+      width: 30%;
+    }
+
+    &__description {
+      width: 70%;
+    }
+  }
+}

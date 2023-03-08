@@ -1,17 +1,19 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="home">
+    <!-- Dashboard -->
+    <!-- TODO: create links to other pages -->
 
-<!-- Dashboard -->
-<!-- TODO: create links to other pages -->
-
-<section class="cards">
-  <ng-container *ngFor="let link of links">
-    <div class="card" (click)="navigate(link.path)">
-      <div class="card-icon">
-        <img [src]="link.icon"/>
-      </div>
-      <div class="card-title">
-        {{ link.title }}
-      </div>
-    </div>
-  </ng-container>
-</section>
+    <section class="cards">
+      <ng-container *ngFor="let link of links">
+        <div class="card" (click)="navigate(link.path)">
+          <div class="card-icon">
+            <img [src]="link.icon" />
+          </div>
+          <div class="card-title">
+            {{ link.title }}
+          </div>
+        </div>
+      </ng-container>
+    </section>
+  </div>
+</div>
