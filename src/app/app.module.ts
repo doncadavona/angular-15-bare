@@ -13,6 +13,8 @@ import { Pipe1Pipe } from './pipes/pipe-1.pipe';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
+import { StoreModule } from '@ngrx/store';
+import { productReducer } from './pages/products-list/store/reducers';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { ProductsListComponent } from './pages/products-list/products-list.compo
     ReactiveFormsModule,
     NgbPaginationModule, 
     NgbAlertModule,
+    StoreModule.forRoot({ products: productReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

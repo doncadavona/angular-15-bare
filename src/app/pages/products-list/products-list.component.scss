@@ -21,9 +21,8 @@
     }
 
     &__item {
-      font-weight: bold;
-
       &:hover {
+        font-weight: bold;
         cursor: pointer;
       }
     }
