@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './pages/to-do-list/to-do-list.component';
@@ -23,7 +23,9 @@ import { Pipe1Pipe } from './pipes/pipe-1.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbPaginationModule, 
+    NgbAlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
