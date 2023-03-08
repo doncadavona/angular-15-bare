@@ -4,13 +4,13 @@
 <!-- TODO: create links to other pages -->
 
 <section class="cards">
-  <ng-container *ngFor="let listItem of lists">
-    <div class="card" (click)="navigate(listItem.path)">
+  <ng-container *ngFor="let link of links">
+    <div class="card" (click)="navigate(link.path)">
       <div class="card-icon">
-        <img [src]="listItem.icon"/>
+        <img [src]="link.icon"/>
       </div>
       <div class="card-title">
-        {{ listItem.title }}
+        {{ link.title }}
       </div>
     </div>
   </ng-container>
