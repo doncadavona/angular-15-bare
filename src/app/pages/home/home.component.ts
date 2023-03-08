@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  links = [
+    {
+      title: 'Products',
+      icon: 'assets/images/box.svg',
+      path: 'products'
+    }
+  ];
 
+  constructor(private router: Router) {}
+
+  navigate(path: string): void {
+    this.router.navigate([path]);
+  }
 }

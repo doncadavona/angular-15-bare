@@ -2,3 +2,16 @@
 
 <!-- Dashboard -->
 <!-- TODO: create links to other pages -->
+
+<section class="cards">
+  <ng-container *ngFor="let listItem of lists">
+    <div class="card" (click)="navigate(listItem.path)">
+      <div class="card-icon">
+        <img [src]="listItem.icon"/>
+      </div>
+      <div class="card-title">
+        {{ listItem.title }}
+      </div>
+    </div>
+  </ng-container>
+</section>
