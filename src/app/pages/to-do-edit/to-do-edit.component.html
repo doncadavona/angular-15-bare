@@ -1,7 +1,7 @@
 <h2>to-do-edit works!</h2>
 
 <p>
-    <a [routerLink]="['/to-do']">To Do List</a>
+    <a [routerLink]="['/to-dos']">To Do List</a>
 </p>
 
 <p>toDo: {{ toDo | json }}</p>
@@ -20,7 +20,7 @@
         <input type="checkbox" formControlName="isDone">
     </p>
     <p>
-        <a [routerLink]="['/to-do', toDo.id]">Cancel</a>
+        <a [routerLink]="['/to-dos', toDo.id]">Cancel</a>
         <button type="submit" [disabled]="!toDoForm.valid">Save</button>
     </p>
 </form>

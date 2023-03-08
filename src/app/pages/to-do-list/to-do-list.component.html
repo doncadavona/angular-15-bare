@@ -1,11 +1,11 @@
 <h2>to-do-list works!</h2>
 
-<a [routerLink]="['/to-do/new']">New</a>
+<a [routerLink]="['/to-dos/new']">New</a>
 
 <ul>
   <li *ngFor="let toDo of (toDos$ | async)">
     <p>
-      <a [routerLink]="['/to-do', toDo.id]">{{ toDo.name }}</a>
+      <a [routerLink]="['/to-dos', toDo.id]">{{ toDo.name }}</a>
     </p>
   </li>
 </ul>

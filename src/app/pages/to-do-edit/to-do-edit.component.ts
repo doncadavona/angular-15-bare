@@ -50,6 +50,6 @@ export class ToDoEditComponent {
     console.log("toDoForm.value", this.toDoForm?.value);
 
     this.toDoService.updateToDo(this.toDo.id, <ToDo>this.toDoForm?.value);
-    this.router.navigate(["/to-do", this.toDo.id]);
+    this.router.navigate(["/to-dos", this.toDo.id]);
   }
 }
