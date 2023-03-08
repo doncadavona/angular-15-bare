@@ -10,6 +10,7 @@ import { ToDoEditComponent } from './pages/to-do-edit/to-do-edit.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { Pipe1Pipe } from './pipes/pipe-1.pipe';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Pipe1Pipe } from './pipes/pipe-1.pipe';
     ToDoShowComponent,
     ToDoNewComponent,
     ToDoEditComponent,
-    Pipe1Pipe
+    Pipe1Pipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
