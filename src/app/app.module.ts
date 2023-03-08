@@ -11,6 +11,8 @@ import { ToDoEditComponent } from './pages/to-do-edit/to-do-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Pipe1Pipe } from './pipes/pipe-1.pipe';
 import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProductsListComponent } from './pages/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HomeComponent } from './pages/home/home.component';
     ToDoNewComponent,
     ToDoEditComponent,
     Pipe1Pipe,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,

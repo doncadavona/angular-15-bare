@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { ToDo } from 'src/app/models/to-do';
 import { ToDoService } from 'src/app/services/to-do.service';
 
@@ -9,14 +10,12 @@ import { ToDoService } from 'src/app/services/to-do.service';
 })
 export class ToDoListComponent {
 
-  public toDos: ToDo[] = [];
+  toDos$!: Observable<ToDo[]>;
   
-  public constructor(private toDoService: ToDoService) {
-    //  
-  }
+  constructor(private toDoService: ToDoService) { }
 
-  public ngOnInit(): void {
-    this.toDos = this.toDoService.getToDos();
+  ngOnInit(): void {
+    this.toDos$ = of(this.toDoService.getToDos());
   }
 
 }
