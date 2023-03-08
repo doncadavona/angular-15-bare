@@ -1,5 +1,7 @@
 <h2>to-do-list works!</h2>
 
+<a [routerLink]="['/to-do/new']">New</a>
+
 <ul>
   <li *ngFor="let toDo of (toDos$ | async)">
     <p>
