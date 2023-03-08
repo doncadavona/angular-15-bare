@@ -1,12 +1,12 @@
-<h2>items-edit works!</h2>
+<h2>to-do-edit works!</h2>
 
 <p>
-    <a [routerLink]="['/to-do']">Items List</a>
+    <a [routerLink]="['/to-do']">To Do List</a>
 </p>
 
 <p>toDo: {{ toDo | json }}</p>
 
-<form *ngIf="toDo" [formGroup]="toDoFormGroup">
+<form *ngIf="toDo && toDoForm" [formGroup]="toDoForm" (ngSubmit)="onSubmit()">
     <p>
         <label>Name:</label>
         <input type="text" formControlName="name">
@@ -21,6 +21,9 @@
     </p>
     <p>
         <a [routerLink]="['/to-do', toDo.id]">Cancel</a>
-        <a (click)="save()">&nbsp;Save</a>
+        <button type="submit" [disabled]="!toDoForm.valid">Save</button>
     </p>
 </form>
+
+<p>toDoForm value: {{ toDoForm?.value | json }}</p>
+<p>toDoForm status: {{ toDoForm?.status }}</p>
