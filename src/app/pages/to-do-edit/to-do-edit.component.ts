@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToDo } from 'src/app/models/to-do';
 import { ToDoService } from 'src/app/services/to-do.service';
@@ -11,17 +11,13 @@ import { ToDoService } from 'src/app/services/to-do.service';
 })
 export class ToDoEditComponent {
   public toDo?: ToDo;
-  
-  public toDoFormGroup = new FormGroup({
-    name: new FormControl(''),
-    description: new FormControl(''),
-    isDone: new FormControl(false),
-  });
+  public toDoForm?: FormGroup;
 
   public constructor(
+    private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private toDoService: ToDoService
+    private toDoService: ToDoService,
   ) {
     // 
   }
@@ -33,20 +29,27 @@ export class ToDoEditComponent {
 
     if (toDoId) {
       this.toDo = this.toDoService.getToDo(toDoId);
-    }
 
-    this.toDoFormGroup.valueChanges.subscribe((value) => {
-      console.log("toDoFormGroup", value);
-    });
+      this.toDoForm = this.formBuilder.group({
+        name: [this.toDo?.name, [Validators.required, Validators.maxLength(32)]],
+        description: [this.toDo?.description, [Validators.required, Validators.maxLength(255)]],
+        isDone: [this.toDo?.isDone, Validators.required]
+      });
+
+      this.toDoForm.valueChanges.subscribe((value) => {
+        console.log("toDoForm", value);
+      });
+
+    }
   }
 
-  public save(): void {
+  public onSubmit(): void {
     if (!this.toDo) return;
 
     console.log("WIP: Save ToDo...", this.toDo?.id);
-    console.log("toDoFormGroup.value", this.toDoFormGroup.value);
+    console.log("toDoForm.value", this.toDoForm?.value);
 
-    this.toDoService.updateToDo(this.toDo.id, <ToDo>this.toDoFormGroup.value);
-    this.router.navigate(["/to-do", { id: this.toDo.id }]);
+    this.toDoService.updateToDo(this.toDo.id, <ToDo>this.toDoForm?.value);
+    this.router.navigate(["/to-do", this.toDo.id]);
   }
 }
