@@ -37,6 +37,17 @@ export class ToDoService {
     return this.getToDos().find(x => x.id === id);
   }
 
+  public addToDo(toDo: ToDo): ToDo {
+    this.toDos.push({
+      id: Math.floor((Math.random() * 999999) + 1).toString(),
+      name: toDo.name,
+      description: toDo.description,
+      isDone: false,
+    });
+
+    return toDo;
+  }
+
   public updateToDo(id: string, toDo: ToDo): ToDo {
     for (let i = 0; i < this.toDos.length; i++) {
       if (id == this.toDos[i].id) {
