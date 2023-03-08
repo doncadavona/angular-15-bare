@@ -52,4 +52,8 @@ export class ToDoService {
 
     return toDo;
   }
+
+  public deleteToDo(id: string): void {
+    this.toDos = this.toDos.filter(x => x.id != id);
+  }
 }

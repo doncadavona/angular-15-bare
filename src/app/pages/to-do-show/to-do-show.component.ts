@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToDo } from 'src/app/models/to-do';
 import { ToDoService } from 'src/app/services/to-do.service';
 
@@ -11,7 +11,7 @@ import { ToDoService } from 'src/app/services/to-do.service';
 export class ToDoShowComponent {
   public toDo?: ToDo;
 
-  public constructor(private route: ActivatedRoute, private toDoService: ToDoService) {
+  public constructor(private route: ActivatedRoute, private router: Router, private toDoService: ToDoService) {
     // 
   }
 
@@ -27,5 +27,8 @@ export class ToDoShowComponent {
 
   public delete(id: string): void {
     console.log("WIP: Delete ToDo...", id);
+
+    this.toDoService.deleteToDo(id);
+    this.router.navigate(["/to-dos"]);
   }
 }
