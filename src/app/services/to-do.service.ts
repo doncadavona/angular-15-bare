@@ -9,19 +9,19 @@ export class ToDoService {
   protected toDos: ToDo[] = [
     {
       id: "1",
-      name: "Item 1",
+      name: "To do 1",
       description: "Example description 1",
       isDone: false
     },
     {
       id: "2",
-      name: "Item 2",
+      name: "To do 2",
       description: "Example description 2",
       isDone: false
     },
     {
       id: "3",
-      name: "Item 3",
+      name: "To do 3",
       description: "Example description 3",
       isDone: false
     },
