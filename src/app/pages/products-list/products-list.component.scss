@@ -21,6 +21,8 @@
     }
 
     &__item {
+      transition: 100ms;
+
       &:hover {
         font-weight: bold;
         cursor: pointer;

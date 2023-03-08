@@ -14,12 +14,19 @@ export class HomeComponent {
       title: 'Products',
       icon: 'assets/images/box.svg',
       path: '/products'
+    },
+    {
+      title: 'Users',
+      icon: 'assets/images/user.svg',
+      path: '/users'
     }
   ];
 
   constructor(private router: Router) {}
 
   navigate(path: string): void {
-    this.router.navigate([path]);
+    this.router.navigate([path]).catch(onrejected => {
+      alert('Under construction: Unable to go to requested page for now.');
+    });
   }
 }
