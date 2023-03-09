@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ProductsListComponent } from './pages/products-list/products-list.component';
-import { ProductsNewComponent } from './pages/products-new/products-new.component';
+import { ProductsListComponent } from './pages/product-list/product-list.component';
+import { ProductsNewComponent } from './pages/product-new/product-new.component';
 import { ToDoEditComponent } from './pages/to-do-edit/to-do-edit.component';
 import { ToDoListComponent } from './pages/to-do-list/to-do-list.component';
 import { ToDoNewComponent } from './pages/to-do-new/to-do-new.component';

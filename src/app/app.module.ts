@@ -12,13 +12,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Pipe1Pipe } from './pipes/pipe-1.pipe';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProductsListComponent } from './pages/products-list/products-list.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 import { StoreModule } from '@ngrx/store';
-import { productReducer } from './pages/products-list/store/reducers';
+import { productReducer } from './pages/product-list/store/reducers';
 import { ProductFormComponent } from './components/product-form/product-form.component';
-import { ProductsNewComponent } from './pages/products-new/products-new.component';
+import { ProductNewComponent } from './pages/product-new/product-new.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductShowComponent } from './pages/product-show/product-show.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +31,11 @@ import { HttpClientModule } from '@angular/common/http';
     Pipe1Pipe,
     HomeComponent,
     NavbarComponent,
-    ProductsListComponent,
+    ProductListComponent,
     ProductFormComponent,
-    ProductsNewComponent,
-    BreadcrumbsComponent
+    ProductNewComponent,
+    BreadcrumbsComponent,
+    ProductShowComponent
   ],
   imports: [
     BrowserModule,

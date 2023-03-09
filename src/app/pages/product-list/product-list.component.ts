@@ -11,11 +11,11 @@ import { ProductsService } from 'src/app/services/products.service';
 import { selectProducts } from './store/selectors';
 
 @Component({
-  selector: 'app-products-list',
-  templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.scss']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss']
 })
-export class ProductsListComponent implements OnInit {
+export class ProductListComponent implements OnInit {
   products$!: Observable<readonly Product[]>;
   products?: Product[];
   columns!: string[];
@@ -28,7 +28,7 @@ export class ProductsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCTS_LIST]]);
+    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCT_LIST]]);
     this.setColumns();
     this.loadProducts();
   }
@@ -51,6 +51,14 @@ export class ProductsListComponent implements OnInit {
     return product[column as keyof Product] as string;
   }
 
+  /**
+   * Navigates to the view product page
+   * @param product 
+   */
+  viewProduct(product: Product): void {
+    this.router.navigate(['products', product.id]);
+  }
+
   private loadProducts(): void {
     this.products$ = this.store.select(selectProducts);
 
@@ -59,24 +67,6 @@ export class ProductsListComponent implements OnInit {
       this.products = products.products;
       console.log("products", products.products);
     });
-
-    /* this.products$ = of([
-      {
-        id: 0,
-        title: "iPhone 9",
-        description: "An apple mobile which is nothing like apple"
-      },
-      {
-        id: 1,
-        title: "iPhone 14",
-        description: "An apple mobile which exceeds all apples"
-      },
-      {
-        id: 2,
-        title: "Samsung Galaxy S22",
-        description: "The phone that makes everyday epic"
-      },
-    ] as Product[]); */
   }
 
   private setColumns(): void {

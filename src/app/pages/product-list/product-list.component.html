@@ -1,0 +1,67 @@
+<div class="product-list container">
+  <section class="header">
+    <h2>
+      <app-breadcrumbs></app-breadcrumbs>
+    </h2>
+
+    <div class="header__action-buttons">
+      <button title="Add Product" class="btn header__action-buttons--add" (click)="addProduct()">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </section>
+
+  <section class="content">
+    <!-- Table Headers -->
+    <div class="product product__header">
+      <ng-container *ngFor="let column of columns">
+        <div [ngClass]="'product__' + column">
+          {{ column | titlecase }}
+        </div>
+      </ng-container>
+    </div>
+    <!-- Product list -->
+    <div *ngFor="let product of (products$ | async); let index = index">
+      <div class="product product__item" (click)="viewProduct(product)" [ngClass]="{ 'even-row': 0 === index % 2}">
+        <ng-container *ngFor="let column of columns">
+          <div [ngClass]="'product__' + column">
+            {{ getColumnValue(product, column) }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- WIP: Products by DummyJSON -->
+    <div class="container mt-5">
+      <h2>Products by DummyJSON</h2>
+
+      <table class="table table-responsive table-hover">
+        <thead>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.title }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td class="text-right d-inline">
+              <a class="btn btn-light btn-sm mr-1" [routerLink]="['products', product.id]">
+                <i class="fa fa-eye"></i>
+              </a>
+              <a class="btn btn-light btn-sm" [routerLink]="['products/edit', product.id]">
+                <i class="fa fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+</div>

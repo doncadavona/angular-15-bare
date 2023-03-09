@@ -11,6 +11,7 @@ export class Breadcrumb {
 }
 
 export const breadcrumbPageMap = {
-  [Page.PRODUCTS_LIST]: new Breadcrumb({ path: 'products', name: 'Products' }),
+  [Page.PRODUCT_LIST]: new Breadcrumb({ path: 'products', name: 'Products' }),
   [Page.PRODUCT_NEW]: new Breadcrumb({ path: 'new', name: 'New Product' }),
+  [Page.PRODUCT_SHOW]: new Breadcrumb({ path: 'new', name: 'New Product' }),
 };

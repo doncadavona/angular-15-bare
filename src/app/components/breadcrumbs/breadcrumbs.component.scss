@@ -1,11 +1,11 @@
 @import '../../../assets/themes/colors';
 
-.breadcrumbs {
+.crumbs {
   display: flex;
   height: 100%;
   align-items: center;
 
-  .breadcrumb {
+  .crumb {
     cursor: pointer;
 
     &__delimiter {

@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Page } from 'src/app/enums/pages.enum';
 import { breadcrumbPageMap } from 'src/app/models/breadcrumb';
 import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
 
 @Component({
-  selector: 'app-products-new',
-  templateUrl: './products-new.component.html',
-  styleUrls: ['./products-new.component.scss']
+  selector: 'app-product-show',
+  templateUrl: './product-show.component.html',
+  styleUrls: ['./product-show.component.scss']
 })
-export class ProductsNewComponent implements OnInit {
+export class ProductShowComponent {
   constructor(public breadcrumbService: BreadcrumbService) { }
 
   ngOnInit(): void {
-    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCTS_LIST], breadcrumbPageMap[Page.PRODUCT_NEW]]);
+    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCT_LIST], breadcrumbPageMap[Page.PRODUCT_SHOW]]);
   }
 
   ngOnDestroy(): void {
