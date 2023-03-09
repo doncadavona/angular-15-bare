@@ -17,6 +17,11 @@ export class HomeComponent {
       title: 'Users',
       icon: 'assets/images/user.svg',
       path: '/users'
+    },
+    {
+      title: 'To Dos',
+      icon: 'assets/images/user.svg',
+      path: '/to-dos'
     }
   ];
 
