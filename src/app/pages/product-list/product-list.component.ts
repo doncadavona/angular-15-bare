@@ -56,7 +56,7 @@ export class ProductListComponent implements OnInit {
    * @param product 
    */
   viewProduct(product: Product): void {
-    this.router.navigate(['products', product.id]);
+    this.router.navigate(['products', 'view', product.id]);
   }
 
   private loadProducts(): void {

@@ -12,7 +12,9 @@ export class ProductShowComponent {
   constructor(public breadcrumbService: BreadcrumbService) { }
 
   ngOnInit(): void {
-    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCT_LIST], breadcrumbPageMap[Page.PRODUCT_SHOW]]);
+    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCT_LIST]]);
+
+    // TODO: breadcrumbService.add(path: 'view/' + product.id, name: 'product.name')
   }
 
   ngOnDestroy(): void {
