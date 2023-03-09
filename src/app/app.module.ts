@@ -15,6 +15,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { StoreModule } from '@ngrx/store';
 import { productReducer } from './pages/products-list/store/reducers';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductsNewComponent } from './pages/products-new/products-new.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { productReducer } from './pages/products-list/store/reducers';
     Pipe1Pipe,
     HomeComponent,
     NavbarComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductFormComponent,
+    ProductsNewComponent
   ],
   imports: [
     BrowserModule,

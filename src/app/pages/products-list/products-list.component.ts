@@ -20,31 +20,16 @@ export class ProductsListComponent implements OnInit {
     this.loadProducts();
   }
 
+  addProduct(): void {
+    alert('To be implemented.');
+  }
+
   getColumnValue(product: Product, column: string): string {
     return product[column as keyof Product] as string;
   }
 
   private loadProducts(): void {
-    // TODO: Implement selector
     this.products$ = this.store.select(selectProducts);
-
-    /* this.products$ = of([
-      {
-        id: 0,
-        title: "iPhone 9",
-        description: "An apple mobile which is nothing like apple"
-      },
-      {
-        id: 1,
-        title: "iPhone 14",
-        description: "An apple mobile which exceeds all apples"
-      },
-      {
-        id: 2,
-        title: "Samsung Galaxy S22",
-        description: "The phone that makes everyday epic"
-      },
-    ] as Product[]); */
   }
 
   private setColumns(): void {

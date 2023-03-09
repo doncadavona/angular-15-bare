@@ -8,6 +8,18 @@
     justify-content: center;
   }
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    &__action-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+    }
+  }
+
   .product {
     display: flex;
     padding: 5px 10px;
