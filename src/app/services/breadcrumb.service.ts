@@ -13,14 +13,6 @@ export class BreadcrumbService {
   }
 
   /**
-   * Initializes the path based on current page/path
-   * @param initial Current
-   */
-  init(initial: Breadcrumb): void {
-    this.breadcrumbs = [{ ...initial, index: 0 }];
-  }
-
-  /**
    * Adds the breadcrumb to the end of the 
    * @param crumb new path/crumb to be added to the list
    */
@@ -36,6 +28,19 @@ export class BreadcrumbService {
    */
   reset(): void {
     this.breadcrumbs = [];
+  }
+
+  /**
+   * Sets the current list to the specified breadcrumb list
+   * @param breadcrumbs reference list of breadcrumbs
+   */
+  set(breadcrumbs: Breadcrumb[]): void {
+    this.breadcrumbs = breadcrumbs.map((breadcrumb, index) => {
+      return {
+        ...breadcrumb,
+        index
+      };
+    });
   }
 
   /**

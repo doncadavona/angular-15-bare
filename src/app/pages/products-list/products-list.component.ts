@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Breadcrumb } from 'src/app/models/breadcrumb';
+import { Page } from 'src/app/enums/pages.enum';
+import { breadcrumbPageMap } from 'src/app/models/breadcrumb';
 import { Product } from 'src/app/models/product';
 import { Products } from 'src/app/models/products';
 import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
@@ -27,10 +28,7 @@ export class ProductsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.breadcrumbService.init(new Breadcrumb({
-      path: 'products',
-      name: 'Products'
-    }));
+    this.breadcrumbService.set([breadcrumbPageMap[Page.PRODUCTS_LIST]]);
     this.setColumns();
     this.loadProducts();
   }

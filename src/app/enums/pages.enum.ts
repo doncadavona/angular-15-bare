@@ -1,0 +1,7 @@
+export enum Page {
+  PRODUCT_NEW,
+  PRODUCTS_LIST,
+  HOME,
+  USERS_LIST,
+  TODO_LIST
+}
