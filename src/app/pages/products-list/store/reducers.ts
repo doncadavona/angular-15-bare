@@ -36,6 +36,7 @@ export const initialState: Product[] = [
 
 export const productReducer = createReducer(
   initialState,
-  // on(ProductActions.getProductSuccess, (state, { products }) => ([...products]),
-  // on(ProductActions.addProduct, state => ({ ...state, id: state.id + 1 })),
+  on(ProductActions.getProductSuccess, (state, { products }) => ([...products])),
+  // on(ProductActions.addProduct, (state, product) => state.concat(product)),
+  // on(ProductActions.addProduct, state => ({ ...state, title: "iPhone 13"  })),
 );
