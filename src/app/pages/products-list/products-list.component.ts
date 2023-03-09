@@ -4,7 +4,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Breadcrumb } from 'src/app/models/breadcrumb';
 import { Product } from 'src/app/models/product';
+import { Products } from 'src/app/models/products';
 import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
+import { ProductsService } from 'src/app/services/products.service';
 import { selectProducts } from './store/selectors';
 
 @Component({
@@ -19,7 +21,8 @@ export class ProductsListComponent implements OnInit {
   constructor(
     private breadcrumbService: BreadcrumbService,
     private router: Router,
-    private store: Store
+    private store: Store,
+    private productsService: ProductsService
   ) { }
 
   ngOnInit(): void {
@@ -51,6 +54,30 @@ export class ProductsListComponent implements OnInit {
 
   private loadProducts(): void {
     this.products$ = this.store.select(selectProducts);
+
+    // WIP: Move this this to the state store.
+    this.productsService.list().subscribe((products: Products) => {
+      // this.products$ = products.products;
+      console.log("products", products.products);
+    });
+
+    /* this.products$ = of([
+      {
+        id: 0,
+        title: "iPhone 9",
+        description: "An apple mobile which is nothing like apple"
+      },
+      {
+        id: 1,
+        title: "iPhone 14",
+        description: "An apple mobile which exceeds all apples"
+      },
+      {
+        id: 2,
+        title: "Samsung Galaxy S22",
+        description: "The phone that makes everyday epic"
+      },
+    ] as Product[]); */
   }
 
   private setColumns(): void {

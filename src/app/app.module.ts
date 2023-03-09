@@ -18,6 +18,7 @@ import { productReducer } from './pages/products-list/store/reducers';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductsNewComponent } from './pages/products-new/products-new.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     NgbPaginationModule, 
     NgbAlertModule,
     StoreModule.forRoot({ products: productReducer }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
