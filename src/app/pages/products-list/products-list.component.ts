@@ -16,6 +16,7 @@ import { selectProducts } from './store/selectors';
 })
 export class ProductsListComponent implements OnInit {
   products$!: Observable<readonly Product[]>;
+  products?: Product[];
   columns!: string[];
 
   constructor(
@@ -57,7 +58,7 @@ export class ProductsListComponent implements OnInit {
 
     // WIP: Move this this to the state store.
     this.productsService.list().subscribe((products: Products) => {
-      // this.products$ = products.products;
+      this.products = products.products;
       console.log("products", products.products);
     });
 

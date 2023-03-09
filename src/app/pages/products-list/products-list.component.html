@@ -1,4 +1,4 @@
-<div class="products-list-container">
+<div class="products-list-container mb-3">
   <div class="products-list">
 
     <section class="header">
@@ -33,4 +33,35 @@
     </section>
 
   </div>
+</div>
+
+<!-- WIP: Products by DummyJSON -->
+<div class="container">
+  <h2>Products by DummyJSON</h2>
+
+  <table class="table table-responsive table-hover">
+    <thead>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td class="text-right d-inline">
+          <a class="btn btn-light btn-sm mr-1" [routerLink]="['products', product.id]">
+            <i class="fa fa-eye"></i>
+          </a>
+          <a class="btn btn-light btn-sm" [routerLink]="['products/edit', product.id]">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
