@@ -2,7 +2,7 @@
   <app-navbar></app-navbar>
   <div class="router-container">
     <!-- <router-outlet></router-outlet> -->
-    <main role="main" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+    <main role="main">
       <router-outlet #outlet="outlet"></router-outlet>
     </main>
   </div>

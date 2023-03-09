@@ -17,6 +17,7 @@ import { StoreModule } from '@ngrx/store';
 import { productReducer } from './pages/products-list/store/reducers';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductsNewComponent } from './pages/products-new/products-new.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductsNewComponent } from './pages/products-new/products-new.componen
     NavbarComponent,
     ProductsListComponent,
     ProductFormComponent,
-    ProductsNewComponent
+    ProductsNewComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,

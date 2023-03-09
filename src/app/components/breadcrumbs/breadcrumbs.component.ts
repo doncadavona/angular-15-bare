@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
 
 @Component({
-  selector: 'app-products-new',
-  templateUrl: './products-new.component.html',
-  styleUrls: ['./products-new.component.scss']
+  selector: 'app-breadcrumbs',
+  templateUrl: './breadcrumbs.component.html',
+  styleUrls: ['./breadcrumbs.component.scss']
 })
-export class ProductsNewComponent {
+export class BreadcrumbsComponent {
   constructor(public breadcrumbService: BreadcrumbService) {}
 }

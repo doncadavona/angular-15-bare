@@ -1,0 +1,11 @@
+<div class="breadcrumbs">
+  <ng-container *ngFor="let breadcrumb of breadcrumbService.breadcrumbs; let last = last">
+    <ng-container *ngIf="!last">
+      <a (click)="breadcrumbService.navigateToCrumb(breadcrumb)">{{ breadcrumb.name }}</a>
+      <i class="fa-sharp fa-solid fa-play breadcrumb"></i>
+    </ng-container>
+    <ng-container *ngIf="last">
+      {{ breadcrumb.name }}
+    </ng-container>
+  </ng-container>
+</div>

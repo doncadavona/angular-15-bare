@@ -1,0 +1,11 @@
+@import '../../../assets/themes/colors';
+
+.products-new {
+  width: 80%;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+}
