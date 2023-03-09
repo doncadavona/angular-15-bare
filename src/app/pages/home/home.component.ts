@@ -19,8 +19,8 @@ export class HomeComponent {
       path: '/users'
     },
     {
-      title: 'To Dos',
-      icon: 'assets/images/user.svg',
+      title: 'To Do',
+      icon: 'assets/images/task-list.svg',
       path: '/to-dos'
     }
   ];
