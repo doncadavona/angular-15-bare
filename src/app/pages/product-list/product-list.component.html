@@ -50,10 +50,10 @@
             <td>{{ product.description | slice:0:50 }}{{ product.description.length > 50 ? "..." : "" }}</td>
             <td>{{ product.price }}</td>
             <td class="text-right">
-              <a class="btn btn-light btn-sm me-1" [routerLink]="['/products', product.id]">
+              <a class="btn btn-light btn-sm me-1" [routerLink]="['/products', product.id]" title="View">
                 <i class="fa fa-eye"></i>
               </a>
-              <a class="btn btn-light btn-sm" [routerLink]="['/products/edit', product.id]">
+              <a class="btn btn-light btn-sm" [routerLink]="['/products/edit', product.id]" title="Edit">
                 <i class="fa fa-edit"></i>
               </a>
             </td>
