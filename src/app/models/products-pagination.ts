@@ -1,6 +1,6 @@
 import { Product } from "./product";
 
-export interface Products {
+export interface ProductsPagination {
   limit: number;
   products: Product[];
   skip: number;

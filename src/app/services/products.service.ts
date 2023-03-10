@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Product } from '../models/product';
-import { Products } from '../models/products';
+import { ProductsPagination } from '../models/products-pagination';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<Products> {
-    return this.http.get<Products>(this.url + "/products")
+  public list(): Observable<ProductsPagination> {
+    return this.http.get<ProductsPagination>(this.url + "/products")
       .pipe(
         catchError(this.handleError)
       );

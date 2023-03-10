@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Page } from 'src/app/enums/pages.enum';
 import { breadcrumbPageMap } from 'src/app/models/breadcrumb';
 import { Product } from 'src/app/models/product';
-import { Products } from 'src/app/models/products';
+import { ProductsPagination } from 'src/app/models/products-pagination';
 import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { selectProducts } from './store/selectors';
@@ -63,9 +63,9 @@ export class ProductListComponent implements OnInit {
     this.products$ = this.store.select(selectProducts);
 
     // WIP: Move this this to the state store.
-    this.productsService.list().subscribe((products: Products) => {
-      this.products = products.products;
-      console.log("products", products.products);
+    this.productsService.list().subscribe((productsPagination: ProductsPagination) => {
+      this.products = productsPagination.products;
+      console.log("products", productsPagination.products);
     });
   }
 
