@@ -31,6 +31,13 @@
       </div>
     </div>
 
+    <a class="btn btn-light btn-sm me-1" [routerLink]="['/products', 1]">
+      <i class="fa fa-eye"></i>
+    </a>
+    <a class="btn btn-light btn-sm" [routerLink]="['/products/edit', 1]">
+      <i class="fa fa-edit"></i>
+    </a>
+
     <!-- WIP: Products by DummyJSON -->
     <div class="container mt-5">
       <h2>Products by DummyJSON</h2>
@@ -47,9 +54,9 @@
           <tr *ngFor="let product of products">
             <td>{{ product.id }}</td>
             <td>{{ product.title }}</td>
-            <td>{{ product.description }}</td>
+            <td>{{ product.description | slice:0:50 }}{{ product.description.length > 50 ? "..." : "" }}</td>
             <td>{{ product.price }}</td>
-            <td class="text-right d-flex flex-row">
+            <td class="text-right">
               <a class="btn btn-light btn-sm me-1" [routerLink]="['/products', product.id]">
                 <i class="fa fa-eye"></i>
               </a>
